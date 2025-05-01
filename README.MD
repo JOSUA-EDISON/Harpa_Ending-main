@@ -15,7 +15,7 @@ Panduan langkah demi langkah untuk menginstal dan mengonfigurasi aplikasi Larave
 ### 1. Clone Repositori
 
 ```bash
-https://github.com/JOSUA-EDISON/final-harpav2.git
+https://github.com/JOSUA-EDISON/Harpa_Ending_main.git
 ```
 
 ### 2. Instalasi Dependensi
