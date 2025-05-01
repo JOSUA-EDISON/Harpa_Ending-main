@@ -1,0 +1,38 @@
+.table-wrapper {
+    overflow-x: auto;
+    max-width: 100%;
+}
+
+.btn-sm {
+    padding: 0.25rem 0.5rem;
+    font-size: 0.75rem;
+}
+
+/* Fix for sidebar positioning */
+.main-sidebar {
+    position: fixed !important;
+    top: 0;
+    left: 0;
+    height: 100%;
+}
+
+/* Ensure content is to the right of sidebar */
+.main-content {
+    margin-left: 250px;
+    width: calc(100% - 250px);
+    transition: all 0.5s;
+}
+
+/* Adjust content when sidebar is minimized */
+body.sidebar-mini .main-content {
+    margin-left: 65px;
+    width: calc(100% - 65px);
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+    .main-content {
+        margin-left: 0;
+        width: 100%;
+    }
+}

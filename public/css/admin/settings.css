@@ -1,0 +1,440 @@
+/*
+ * Admin API Settings CSS
+ * This file contains styles specific to the API settings admin panel
+ */
+
+/* Main Content */
+.main-content {
+    margin-left: 250px;
+    width: calc(100% - 250px);
+    transition: all 0.5s;
+}
+
+/* Header styling */
+.section-header h1 {
+    font-size: 24px;
+    font-weight: 600;
+    color: #34395e;
+    margin-bottom: 0;
+}
+
+.section-header {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.03);
+    background-color: #ffffff;
+    border-radius: 3px;
+    border: none;
+    position: relative;
+    margin-bottom: 30px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.section-header h1 {
+    margin-bottom: 0;
+    color: #000000;
+    font-weight: 700;
+    display: inline-block;
+    font-size: 24px;
+    margin-top: 3px;
+}
+
+.section-header .section-header-breadcrumb {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+}
+
+.section-header .section-header-breadcrumb .breadcrumb-item {
+    font-size: 12px;
+}
+
+.section-header .section-header-breadcrumb .breadcrumb-item a {
+    color: #6777ef;
+    opacity: 0.8;
+}
+
+.section-header .section-header-breadcrumb .breadcrumb-item a:hover {
+    opacity: 1;
+    text-decoration: none;
+}
+
+.section-header .section-header-breadcrumb .breadcrumb-item.active {
+    color: #34395e;
+    font-weight: 600;
+}
+
+.section-body .section-title {
+    font-size: 18px;
+    color: #34395e;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.section-body .section-lead {
+    margin-bottom: 30px;
+    font-size: 16px;
+    color: #6c757d;
+}
+
+/* Main Content */
+.main-content {
+    margin-left: 250px;
+    width: calc(100% - 250px);
+    transition: all 0.5s;
+}
+
+/* Card customization */
+.card.api-settings-card {
+    border-top: 3px solid #6777ef;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.card.api-settings-card:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.api-settings-card .card-header {
+    background-color: #f9f9f9;
+    border-bottom: 1px solid #f2f2f2;
+    padding: 15px 25px;
+}
+
+.api-settings-card .card-header h4 {
+    font-weight: 600;
+    color: #444;
+}
+
+/* Form elements */
+.api-settings-card .form-group label {
+    font-weight: 600;
+    color: #555;
+}
+
+.api-settings-card .form-control {
+    border: 1px solid #e4e6fc;
+    padding: 10px 15px;
+    border-radius: 3px;
+    transition: all 0.3s ease;
+}
+
+.api-settings-card .form-control:focus {
+    border-color: #6777ef;
+    box-shadow: 0 0 0 1px rgba(103, 119, 239, 0.2);
+}
+
+/* Environment indicator */
+.environment-badge {
+    padding: 4px 8px;
+    border-radius: 30px;
+    font-size: 12px;
+    font-weight: 600;
+    display: inline-block;
+    margin-left: 10px;
+}
+
+.environment-badge.production {
+    background-color: #fc544b;
+    color: white;
+}
+
+.environment-badge.sandbox {
+    background-color: #47c363;
+    color: white;
+}
+
+/* Toggle Switch */
+.api-toggle {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+
+.api-toggle input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+    border-radius: 34px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+}
+
+input:checked + .slider {
+    background-color: #6777ef;
+}
+
+input:focus + .slider {
+    box-shadow: 0 0 1px #6777ef;
+}
+
+input:checked + .slider:before {
+    transform: translateX(26px);
+}
+
+/* Input group for API keys */
+.api-key-group {
+    position: relative;
+    display: flex;
+}
+
+.api-key-group .form-control {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    z-index: 1;
+}
+
+.api-key-group .input-group-append {
+    display: flex;
+}
+
+.api-key-group .input-group-append button {
+    border-radius: 0;
+    margin-left: -1px;
+}
+
+.api-key-group .input-group-append button:last-child {
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+}
+
+.api-key-group .input-group-append .btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 12px;
+    height: 42px;
+}
+
+/* API Test button */
+.test-api-btn {
+    margin-left: 10px;
+    padding: 4px 8px;
+    font-size: 12px;
+}
+
+/* API Status indicator */
+.api-status {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    margin-right: 5px;
+}
+
+.api-status.active {
+    background-color: #47c363;
+}
+
+.api-status.inactive {
+    background-color: #fc544b;
+}
+
+/* Responsive adjustments */
+@media (max-width: 767.98px) {
+    .api-settings-card .card-footer {
+        text-align: center;
+    }
+
+    .api-settings-card .btn {
+        width: 100%;
+        margin-top: 10px;
+    }
+}
+
+/* Status badges */
+.badge {
+    padding: 5px 10px;
+    font-size: 11px;
+    font-weight: 600;
+    border-radius: 30px;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.badge-secondary {
+    background-color: #6c757d;
+    color: #fff;
+}
+
+.badge-success {
+    background-color: #47c363;
+    color: #fff;
+}
+
+.badge-danger {
+    background-color: #fc544b;
+    color: #fff;
+}
+
+.badge-warning {
+    background-color: #ffa426;
+    color: #fff;
+}
+
+#rajaongkir-status, #midtrans-status {
+    min-width: 150px;
+    text-align: center;
+}
+
+/* Spinner styling */
+.spinner-border-sm {
+    width: 1rem;
+    height: 1rem;
+    border-width: 0.2em;
+    margin-right: 5px;
+}
+
+/* API Test Popup Notifications */
+.api-test-popup {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 9999;
+    width: 350px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    overflow: hidden;
+    animation: slideIn 0.3s ease-out;
+    transition: opacity 0.3s ease-out, transform 0.3s ease-out;
+}
+
+.popup-hiding {
+    opacity: 0;
+    transform: translateX(30px);
+}
+
+.api-test-popup.success-popup .popup-header {
+    background-color: #47c363;
+    color: white;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+}
+
+.api-test-popup .popup-header i {
+    font-size: 24px;
+    margin-right: 10px;
+}
+
+.api-test-popup .popup-header h3 {
+    margin: 0;
+    flex-grow: 1;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.api-test-popup .popup-header .close-popup {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    padding: 0 5px;
+    opacity: 0.8;
+}
+
+.api-test-popup .popup-header .close-popup:hover {
+    opacity: 1;
+}
+
+.api-test-popup .popup-body {
+    padding: 15px;
+}
+
+.api-test-popup .popup-body p {
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(30px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Connection Status Section */
+.connection-status-item {
+    margin-bottom: 15px;
+    padding: 15px;
+    border-radius: 6px;
+    border: 1px solid #e3e6f0;
+    background-color: #f8f9fc;
+    transition: all 0.3s ease;
+}
+
+.connection-status-item h6 {
+    font-weight: 600;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+}
+
+.connection-status-item .connection-details {
+    font-size: 13px;
+}
+
+.connection-status-item.success {
+    border-left: 4px solid #47c363;
+    background-color: #f0fff4;
+}
+
+.connection-status-item.error {
+    border-left: 4px solid #fc544b;
+    background-color: #fff0f0;
+}
+
+.connection-status-item.success h6 {
+    color: #2bb84a;
+}
+
+.connection-status-item.error h6 {
+    color: #e03e36;
+}
+
+.connection-status-item .connection-timestamp {
+    font-size: 11px;
+    margin-top: 5px;
+    opacity: 0.7;
+}
+
+.connection-status-item .detail-item {
+    display: flex;
+    margin-bottom: 4px;
+}
+
+.connection-status-item .detail-label {
+    font-weight: 600;
+    margin-right: 8px;
+    min-width: 90px;
+}

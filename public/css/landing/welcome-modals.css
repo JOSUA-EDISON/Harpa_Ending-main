@@ -1,0 +1,543 @@
+/* Modal styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    padding-top: 0;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.8);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.modal.show {
+    opacity: 1;
+}
+
+.modal-content {
+    margin: 5% auto;
+    display: block;
+    width: 90%;
+    max-width: 800px;
+    background-color: #fff;
+    border-radius: 12px;
+    padding: 0;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    transform: translateY(20px);
+    opacity: 0;
+    transition: all 0.4s ease;
+    overflow: hidden;
+}
+
+.modal.show .modal-content {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+#imageModal .modal-content {
+    background-color: rgba(255, 255, 255, 0.05);
+    padding: 20px;
+    padding-top: 25px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    max-width: 700px;
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+#modalImage {
+    width: 100%;
+    max-height: 65vh;
+    object-fit: contain;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+#modalCaption {
+    margin: 15px 0 5px;
+    text-align: center;
+    color: white;
+    font-size: 16px;
+    font-weight: 500;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+#imageModal .close,
+#productDetailModal .close {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    color: #fff;
+    font-size: 28px;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 1100;
+    height: 40px;
+    width: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+}
+
+#imageModal .close:hover,
+#productDetailModal .close:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+    transform: scale(1.1);
+    border-color: rgba(255, 255, 255, 0.5);
+}
+
+#imageModal .close:after,
+#productDetailModal .close:after {
+    content: "Tutup";
+    position: absolute;
+    bottom: -25px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 12px;
+    white-space: nowrap;
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 3px 8px;
+    border-radius: 10px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+#imageModal .close:hover:after,
+#productDetailModal .close:hover:after {
+    opacity: 1;
+}
+
+.close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #fff;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    opacity: 0.8;
+    transition: all 0.3s ease;
+    z-index: 1002;
+    height: 40px;
+    width: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.close:hover {
+    opacity: 1;
+    transform: scale(1.1);
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* Product Detail Modal Styling */
+#productDetailModal .modal-content {
+    overflow: hidden;
+    padding: 0;
+}
+
+#productDetailContent {
+    padding: 0;
+    margin-top: 10px;
+}
+
+#productDetailContent h2 {
+    margin: 0;
+    padding: 20px;
+    background: linear-gradient(135deg, #6777ef, #3a86ff);
+    color: white;
+    font-size: 24px;
+    text-align: center;
+}
+
+.product-detail-image {
+    text-align: center;
+    margin: 0;
+    background-color: #f8f9fa;
+    position: relative;
+    overflow: hidden;
+    padding: 30px;
+}
+
+.product-detail-image img {
+    max-width: 90%;
+    max-height: 300px;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.product-detail-image:hover img {
+    transform: scale(1.05);
+}
+
+.product-detail-price {
+    margin: 0;
+    padding: 15px 20px;
+    background-color: #f8f9fa;
+    border-bottom: 1px solid #eee;
+}
+
+.price-stock-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.product-detail-price h3 {
+    color: #6777ef;
+    font-weight: 600;
+    font-size: 22px;
+    margin: 0;
+}
+
+.product-detail-description {
+    padding: 20px;
+    line-height: 1.7;
+    border-bottom: 1px solid #eee;
+}
+
+.product-detail-description h4 {
+    margin-bottom: 15px;
+    font-weight: 600;
+    color: #333;
+    font-size: 18px;
+}
+
+.product-detail-description p {
+    color: #555;
+    margin: 0;
+}
+
+.product-detail-specs {
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-bottom: 1px solid #eee;
+}
+
+.product-detail-specs h4 {
+    margin-bottom: 15px;
+    font-weight: 600;
+    color: #333;
+    font-size: 18px;
+}
+
+.product-detail-specs ul {
+    padding-left: 20px;
+    margin: 0;
+}
+
+.product-detail-specs li {
+    margin-bottom: 8px;
+    color: #555;
+}
+
+.product-detail-action {
+    padding: 20px;
+    text-align: center;
+    background-color: #fff;
+}
+
+.btn-order {
+    display: inline-block;
+    background: linear-gradient(135deg, #6777ef, #3a86ff);
+    color: white;
+    font-weight: 600;
+    padding: 12px 30px;
+    border-radius: 30px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(103, 119, 239, 0.4);
+}
+
+.btn-order:hover {
+    background: linear-gradient(135deg, #5a67d8, #2178ff);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(103, 119, 239, 0.6);
+    text-decoration: none;
+    color: white;
+}
+
+/* Product styles */
+.product-image {
+    cursor: pointer;
+    transition: transform 0.3s;
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    margin: 0;
+    padding: 8px;
+    border-radius: 12px;
+}
+
+.product-image:hover {
+    transform: scale(1.05);
+}
+
+.product-description {
+    margin: 10px 0;
+    color: #666;
+    font-size: 14px;
+    height: 60px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
+    -webkit-box-orient: vertical;
+}
+
+.product-description-list {
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+.product-description-list p {
+    position: relative;
+    padding-left: 20px;
+    margin-bottom: 8px;
+    color: #555;
+}
+
+.product-description-list p:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 8px;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: #6777ef;
+}
+
+.details-btn {
+    background: linear-gradient(135deg, #6777ef, #3a86ff);
+    color: white;
+    border: none;
+    border-radius: 20px;
+    padding: 6px 15px;
+    cursor: pointer;
+    font-size: 12px;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(103, 119, 239, 0.3);
+}
+
+.details-btn:hover {
+    background: linear-gradient(135deg, #5a67d8, #2178ff);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(103, 119, 239, 0.5);
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    .modal-content {
+        width: 95%;
+        margin: 10% auto;
+    }
+
+    #imageModal .modal-content {
+        width: 90%;
+        padding: 15px;
+        margin: 15% auto;
+    }
+
+    #modalImage {
+        max-height: 55vh;
+    }
+
+    .close {
+        top: 10px;
+        right: 20px;
+        font-size: 30px;
+    }
+
+    #imageModal .close,
+    #productDetailModal .close {
+        top: 15px;
+        right: 15px;
+        font-size: 28px;
+        height: 36px;
+        width: 36px;
+    }
+
+    #productDetailContent h2 {
+        font-size: 20px;
+        padding: 15px;
+    }
+
+    .product-detail-price h3 {
+        font-size: 18px;
+    }
+
+    .product-detail-image {
+        padding: 15px;
+    }
+
+    .product-detail-image img {
+        max-height: 220px;
+    }
+
+    .btn-order {
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+}
+
+/* Update NFT item styling */
+.nft-list .item {
+    background-color: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding-top: 15px;
+}
+
+.nft-list .item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+.nft-list .item img.product-image {
+    width: 85%;
+    height: 180px;
+    object-fit: cover;
+    margin: 0 auto;
+    padding: 0;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    transition: all 0.4s ease;
+}
+
+.nft-list .item img.product-image:hover {
+    transform: scale(1.05);
+}
+
+.nft-list .info {
+    padding: 1.5rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Stock status indicator */
+.stock-status {
+    display: inline-block;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 600;
+    text-align: center;
+    margin-left: 10px;
+}
+
+.in-stock {
+    background-color: #e3fcef;
+    color: #38c172;
+}
+
+.out-of-stock {
+    background-color: #feecef;
+    color: #e74c3c;
+}
+
+.btn-order[disabled] {
+    background: linear-gradient(135deg, #6c757d, #495057);
+    cursor: not-allowed;
+    opacity: 0.7;
+    pointer-events: none;
+}
+
+/* Description and Key Points styling */
+.description-content {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.key-points {
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    padding: 15px 20px;
+    margin-top: 10px;
+}
+
+.key-points h5 {
+    color: #333;
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.key-points ul {
+    padding-left: 20px;
+    margin: 0;
+}
+
+.key-points li {
+    margin-bottom: 8px;
+    color: #555;
+    position: relative;
+    padding-left: 5px;
+}
+
+.key-points li::before {
+    content: '';
+    position: absolute;
+    left: -15px;
+    top: 8px;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: #6777ef;
+}
+
+.product-detail-price {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+.product-detail-price h3 {
+    margin-bottom: 0;
+}
+
+.stock-status {
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.in-stock {
+    background-color: #28a745;
+    color: white;
+}
+
+.out-of-stock {
+    background-color: #dc3545;
+    color: white;
+}
+
+.product-specs-list {
+    padding-left: 20px;
+}
+
+.product-specs-list li {
+    margin-bottom: 8px;
+}

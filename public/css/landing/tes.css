@@ -1,0 +1,869 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px; /* Updated to match navbar height */
+}
+
+:root {
+    --primary-color: #3a86ff;
+    --secondary-color: #ff006e;
+    --dark-color: #333;
+    --light-color: #f8f9fa;
+    --success-color: #4cc9f0;
+    --transition: all 0.3s ease;
+}
+
+body {
+    background-color: var(--light-color);
+    color: var(--dark-color);
+    line-height: 1.6;
+    position: relative;
+    margin: 0; /* Explicitly set margin to 0 */
+}
+
+.main-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+/* Navigation */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: rgba(248, 249, 250, 0.95);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+nav .logo {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+nav .logo:hover {
+    color: var(--secondary-color);
+    transform: scale(1.05);
+}
+
+nav .links {
+    display: flex;
+    gap: 2rem;
+}
+
+nav .links a {
+    text-decoration: none;
+    color: var(--dark-color);
+    font-weight: 500;
+    position: relative;
+    transition: var(--transition);
+}
+
+nav .links a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background-color: var(--primary-color);
+    transition: var(--transition);
+}
+
+nav .links a:hover {
+    color: var(--primary-color);
+}
+
+nav .links a:hover::after {
+    width: 100%;
+}
+
+/* Header */
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 6rem 0;
+    gap: 3rem;
+    margin-bottom: 4rem;
+}
+
+header .left {
+    max-width: 600px;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+}
+
+header h1 span {
+    color: var(--primary-color);
+    display: block;
+    font-size: 3rem;
+}
+
+header p {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    color: #666;
+}
+
+header a {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background-color: var(--primary-color);
+    color: white;
+    padding: 0.8rem 1.5rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: var(--transition);
+}
+
+header a:hover {
+    background-color: var(--secondary-color);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+header img {
+    max-width: 450px;
+    border-radius: 20px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    transition: var(--transition);
+}
+
+header img:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+/* Separator */
+.separator {
+    text-align: center;
+    font-size: 2.2rem;
+    margin: 2rem 0 4rem;
+    position: relative;
+    color: var(--primary-color);
+    padding-bottom: 1rem;
+}
+
+.separator::before,
+.separator::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    width: 35%;
+    height: 2px;
+    background: linear-gradient(to right, transparent, var(--primary-color), transparent);
+}
+
+.separator::before {
+    left: 0;
+}
+
+.separator::after {
+    right: 0;
+}
+
+/* NFT Shop Section */
+.nft-shop {
+    padding: 2rem 0 6rem;
+    margin-bottom: 4rem;
+}
+
+.nft-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.nft-list .item {
+    background-color: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: var(--transition);
+}
+
+.nft-list .item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+.nft-list .item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.nft-list .info {
+    padding: 1.5rem;
+}
+
+.nft-list h5 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.nft-list .btc p {
+    font-weight: 600;
+    color: var(--dark-color);
+}
+
+.nft-list .btc p::before {
+    content: 'Rp. ';
+    color: var(--secondary-color);
+}
+
+.nft-list .bid {
+    padding: 1rem 1.5rem;
+    border-top: 1px solid #eee;
+}
+
+.nft-list .bid a {
+    display: block;
+    background-color: var(--primary-color);
+    color: white;
+    text-align: center;
+    padding: 0.7rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: var(--transition);
+}
+
+.nft-list .bid a:hover {
+    background-color: var(--secondary-color);
+}
+
+/* Contact Section */
+.contact {
+    position: relative;
+    padding: 8rem 0 6rem;
+    margin-top: 0;
+    scroll-margin-top: 80px; /* Adjusted to match other sections */
+}
+
+.contact h2 {
+    text-align: center;
+    margin-bottom: 4rem;
+    font-size: 2.2rem;
+    position: relative;
+}
+
+.contact h2::after {
+    content: '';
+    position: absolute;
+    bottom: -1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+    border-radius: 3px;
+}
+
+.contact .row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    margin-top: 4rem;
+}
+
+.contact .map {
+    width: 100%;
+    height: 400px;
+    border-radius: 15px;
+    border: none;
+}
+
+.contact form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.contact .input-group {
+    position: relative;
+}
+
+.contact .input-group i {
+    position: absolute;
+    top: 50%;
+    left: 15px;
+    transform: translateY(-50%);
+    color: #999;
+}
+
+.contact input {
+    width: 100%;
+    padding: 1rem 1rem 1rem 45px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    font-size: 1rem;
+    transition: var(--transition);
+}
+
+.contact input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(58, 134, 255, 0.2);
+}
+
+.contact .btn {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 1rem;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.contact .btn:hover {
+    background-color: var(--secondary-color);
+    transform: translateY(-3px);
+}
+
+/* Footer */
+footer {
+    background-color: var(--dark-color);
+    color: white;
+    padding: 3rem 0;
+    margin-top: 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+}
+
+footer h3 {
+    font-size: 1.8rem;
+    text-align: center;
+    max-width: 600px;
+}
+
+footer .right {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+footer .links {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+footer .links a {
+    color: #ccc;
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+footer .links a:hover {
+    color: var(--primary-color);
+}
+
+footer .social {
+    display: flex;
+    gap: 1.5rem;
+}
+
+footer .social i {
+    font-size: 1.8rem;
+    color: #ccc;
+    transition: var(--transition);
+    cursor: pointer;
+}
+
+footer .social i:hover {
+    color: var(--primary-color);
+    transform: translateY(-5px);
+}
+
+footer p {
+    color: #999;
+    text-align: center;
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    header .left {
+        max-width: 100%;
+    }
+
+    header img {
+        max-width: 100%;
+    }
+
+    .contact .row {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    nav .links {
+        gap: 1rem;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .separator::before,
+    .separator::after {
+        width: 20%;
+    }
+
+    footer h3 {
+        font-size: 1.5rem;
+    }
+
+    #home, #promosi-unggulan, #contact {
+        min-height: auto;
+        padding-top: 4rem;
+        padding-bottom: 4rem;
+        scroll-margin-top: 80px; /* Keep consistent with desktop value */
+    }
+
+    .separator {
+        margin: 1rem 0 3rem;
+    }
+
+    header {
+        padding: 4rem 0;
+    }
+}
+
+@media (max-width: 576px) {
+    header h1 {
+        font-size: 2rem;
+    }
+
+    header h1 span {
+        font-size: 2.5rem;
+    }
+
+    .nft-list {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    }
+
+    .separator::before,
+    .separator::after {
+        display: none;
+    }
+}
+
+/* Navbar Styles */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 0;
+    height: 80px; /* Fixed height */
+    display: flex;
+    align-items: center;
+}
+
+.nav-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.logo {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.logo-text {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #0f2182;
+    -webkit-text-fill-color: #0f2182;
+    transition: transform 0.3s ease;
+}
+
+.logo:hover {
+    background: rgba(15, 33, 130, 0.05);
+}
+
+.nav-links {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+    margin-left: auto;
+    margin-right: 2rem;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: var(--dark-color);
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.75rem 1.25rem;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.nav-link i {
+    font-size: 1.3rem;
+    transition: transform 0.3s ease;
+}
+
+.nav-link span {
+    font-size: 1rem;
+}
+
+.nav-link::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: -1;
+    border-radius: 12px;
+}
+
+.nav-link:hover {
+    color: white;
+    transform: translateY(-2px);
+}
+
+.nav-link:hover::before {
+    opacity: 1;
+}
+
+.nav-link:hover i {
+    transform: translateY(-2px) scale(1.1);
+}
+
+.nav-link.active {
+    color: white;
+    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+    box-shadow: 0 4px 15px rgba(58, 134, 255, 0.2);
+}
+
+.mobile-menu-btn {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.8rem;
+    cursor: pointer;
+    color: var(--dark-color);
+    padding: 0.5rem;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.mobile-menu-btn:hover {
+    color: var(--primary-color);
+    background: rgba(58, 134, 255, 0.1);
+}
+
+/* Mobile Responsive Styles */
+@media (max-width: 768px) {
+    .nav-container {
+        padding: 0 1.5rem;
+    }
+
+    .nav-links {
+        position: fixed;
+        top: 75px;
+        left: 0;
+        width: 100%;
+        background: white;
+        flex-direction: column;
+        gap: 0.5rem;
+        padding: 1rem 0;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        transform: translateY(-100%);
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
+        margin-right: 0;
+    }
+
+    .auth-buttons {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        padding: 0.5rem 1rem;
+    }
+
+    .nav-links.show + .auth-buttons {
+        display: flex;
+        position: fixed;
+        top: calc(75px + 100%);
+        left: 0;
+        background: white;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .auth-link {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .mobile-menu-btn {
+        display: block;
+    }
+
+    .mobile-menu-btn.active {
+        color: var(--primary-color);
+        background: rgba(58, 134, 255, 0.1);
+    }
+}
+
+/* Ensure sections have proper spacing */
+section, header, .nft-shop {
+    position: relative;
+    scroll-margin-top: 80px; /* Match with scroll-padding-top */
+}
+
+#contact {
+    min-height: 100vh;
+    padding-top: 6rem;
+    padding-bottom: 4rem;
+    scroll-margin-top: 80px; /* Match with scroll-padding-top */
+    margin-bottom: 4rem;
+}
+
+/* Home section specific margin */
+#home {
+    min-height: 100vh;
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+    display: flex;
+    align-items: center;
+    scroll-margin-top: 80px; /* Match with scroll-padding-top */
+}
+
+/* Promosi section specific margin */
+#promosi-unggulan {
+    padding-top: 6rem;
+    padding-bottom: 4rem;
+    scroll-margin-top: 80px; /* Match with scroll-padding-top */
+}
+
+/* Auth Buttons Styles */
+.auth-buttons {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.auth-link {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.6rem 1.2rem;
+    border-radius: 8px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.auth-link i {
+    font-size: 1.2rem;
+}
+
+.auth-link.login {
+    color: #0f2182;
+    background: rgba(15, 33, 130, 0.1);
+}
+
+.auth-link.login:hover {
+    background: rgba(15, 33, 130, 0.2);
+}
+
+.auth-link.register {
+    color: white;
+    background: #0f2182;
+}
+
+.auth-link.register:hover {
+    background: #0a1761;
+    transform: translateY(-2px);
+}
+
+/* Styling for additional auth buttons */
+.auth-link.orders {
+    background: #6777ef;
+    color: white;
+    border: 1px solid #6777ef;
+}
+
+.auth-link.orders:hover {
+    background: #556bf0;
+}
+
+.auth-link.logout {
+    background: #fc544b;
+    color: white;
+    border: 1px solid #fc544b;
+}
+
+.auth-link.logout:hover {
+    background: #fb2c22;
+}
+
+/* Mobile version adjustment for multiple auth buttons */
+@media (max-width: 768px) {
+    .auth-buttons {
+        margin-top: 1rem;
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        width: 100%;
+    }
+
+    .auth-link {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+/* Modal styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    padding-top: 50px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+.modal-content {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 900px;
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 20px;
+}
+
+#imageModal .modal-content {
+    background-color: transparent;
+    padding: 0;
+}
+
+#modalImage {
+    width: 100%;
+    max-height: 80vh;
+    object-fit: contain;
+}
+
+#modalCaption {
+    margin: 10px 0;
+    text-align: center;
+    color: white;
+    font-size: 18px;
+}
+
+.close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* Product styles */
+.product-image {
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.product-image:hover {
+    transform: scale(1.05);
+}
+
+.product-description {
+    margin: 10px 0;
+    color: #666;
+    font-size: 14px;
+}
+
+.details-btn {
+    background-color: #6777ef;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    padding: 5px 10px;
+    cursor: pointer;
+    font-size: 12px;
+    transition: background-color 0.3s;
+}
+
+.details-btn:hover {
+    background-color: #5a67d8;
+}
+
+#productDetailContent {
+    padding: 20px;
+}
+

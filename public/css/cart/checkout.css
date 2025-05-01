@@ -1,0 +1,207 @@
+/* Checkout Styles - Compatible with Boxicons and FontAwesome */
+
+/* Progress Steps */
+.checkout-progress {
+    margin-bottom: 2rem;
+}
+
+.progress-step {
+    text-align: center;
+    position: relative;
+    flex: 1;
+}
+
+.progress-step:not(:last-child):after {
+    content: '';
+    position: absolute;
+    top: 15px;
+    width: 100%;
+    height: 2px;
+    background: #e9ecef;
+    z-index: 0;
+}
+
+.progress-step.active:not(:last-child):after {
+    background: #6777ef;
+}
+
+.step-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: #e9ecef;
+    color: #6c757d;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 8px;
+    position: relative;
+    z-index: 1;
+    font-weight: bold;
+}
+
+.progress-step.active .step-icon {
+    background: #6777ef;
+    color: white;
+}
+
+.step-label {
+    font-size: 0.85rem;
+    color: #6c757d;
+}
+
+.progress-step.active .step-label {
+    color: #6777ef;
+    font-weight: 600;
+}
+
+/* Checkout Items */
+.checkout-item {
+    border-bottom: 1px solid #f5f5f5;
+    padding-bottom: 12px;
+    margin-bottom: 12px;
+}
+
+.checkout-item:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+}
+
+.checkout-item-img img,
+.no-image-placeholder {
+    border-radius: 4px;
+    border: 1px solid #eee;
+}
+
+.no-image-placeholder {
+    background: #f9f9f9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Shipping Services */
+.shipping-service {
+    border: 1px solid #e9ecef;
+    border-radius: 0.25rem;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.shipping-service:hover {
+    background-color: #f8f9fa;
+    border-color: #6777ef;
+}
+
+.shipping-service.active {
+    border-color: #6777ef;
+    background-color: rgba(103, 119, 239, 0.05);
+}
+
+.shipping-logo {
+    width: 60px;
+    margin-right: 1rem;
+    text-align: center;
+}
+
+.shipping-logo img {
+    max-width: 100%;
+    height: auto;
+}
+
+.shipping-info {
+    flex: 1;
+}
+
+.shipping-name {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 4px;
+}
+
+.shipping-price {
+    display: block;
+    font-weight: 600;
+    color: #28a745;
+    margin-bottom: 4px;
+}
+
+.shipping-estimate {
+    display: block;
+    font-size: 0.85rem;
+    color: #6c757d;
+}
+
+.shipping-check {
+    margin-left: 1rem;
+    color: #6777ef;
+    font-size: 1.5rem;
+}
+
+/* Animation */
+.pulse-animation {
+    animation: pulse-checkout 1s;
+}
+
+@keyframes pulse-checkout {
+    0% {
+        box-shadow: 0 0 0 0 rgba(103, 119, 239, 0.5);
+    }
+    70% {
+        box-shadow: 0 0 0 15px rgba(103, 119, 239, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(103, 119, 239, 0);
+    }
+}
+
+/* Custom styles for boxicons */
+.checkout-card i.bx {
+    font-size: 1.2em;
+    vertical-align: middle;
+}
+
+/* Alert styling */
+.alert i.bx {
+    margin-right: 0.5rem;
+}
+
+/* Form styles */
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-control:focus,
+.form-select:focus {
+    border-color: #6777ef;
+    box-shadow: 0 0 0 0.2rem rgba(103, 119, 239, 0.25);
+}
+
+/* Order summary section */
+.order-summary-totals {
+    margin-top: 1rem;
+}
+
+.order-total-value {
+    font-weight: bold;
+    color: #28a745;
+}
+
+/* Responsive adjustments */
+@media (max-width: 767px) {
+    .checkout-progress .step-label {
+        font-size: 0.7rem;
+    }
+
+    .shipping-service {
+        padding: 0.75rem;
+    }
+
+    .shipping-logo {
+        width: 40px;
+    }
+}
