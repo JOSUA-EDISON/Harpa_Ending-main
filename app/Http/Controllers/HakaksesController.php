@@ -22,15 +22,14 @@ class HakaksesController extends Controller
         //
         $search = $request->get('search');
         if ($search) {
-            $data['hakakses'] = hakakses::where('role', 'admin')
-                ->where(function($query) use ($search) {
-                    $query->where('name', 'like', "%{$search}%")
-                        ->orWhere('email', 'like', "%{$search}%")
-                        ->orWhere('id', 'like', "%{$search}%");
-                })
-                ->get();
+            $data['hakakses'] = hakakses::where(function($query) use ($search) {
+                $query->where('name', 'like', "%{$search}%")
+                    ->orWhere('email', 'like', "%{$search}%")
+                    ->orWhere('id', 'like', "%{$search}%");
+            })
+            ->get();
         } else {
-            $data['hakakses'] = hakakses::where('role', 'admin')->get();
+            $data['hakakses'] = hakakses::all();
         }
         return view('layouts.hakakses.index', $data);
     }
@@ -246,5 +245,53 @@ class HakaksesController extends Controller
             $message->to($invitation->email)
                     ->subject('Undangan untuk Bergabung dengan Harpa');
         });
+    }
+
+    /**
+     * Promote a user to admin role
+     */
+    public function promote($id)
+    {
+        $user = hakakses::find($id);
+
+        if (!$user) {
+            return redirect()->route('admin.hakakses.index')
+                ->with('error', 'User tidak ditemukan!');
+        }
+
+        if ($user->role === 'admin') {
+            return redirect()->route('admin.hakakses.index')
+                ->with('error', 'User sudah memiliki hak akses admin!');
+        }
+
+        $user->role = 'admin';
+        $user->save();
+
+        return redirect()->route('admin.hakakses.index')
+            ->with('message', 'User berhasil dijadikan admin!');
+    }
+
+    /**
+     * Unpromote an admin back to user role
+     */
+    public function unpromote($id)
+    {
+        $user = hakakses::find($id);
+
+        if (!$user) {
+            return redirect()->route('admin.hakakses.index')
+                ->with('error', 'User tidak ditemukan!');
+        }
+
+        if ($user->role === 'user') {
+            return redirect()->route('admin.hakakses.index')
+                ->with('error', 'User sudah memiliki hak akses user!');
+        }
+
+        $user->role = 'user';
+        $user->save();
+
+        return redirect()->route('admin.hakakses.index')
+            ->with('message', 'Admin berhasil dikembalikan menjadi user!');
     }
 }

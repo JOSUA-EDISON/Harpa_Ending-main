@@ -21,7 +21,7 @@
                             <a href="{{ route('products.catalog') }}" class="btn btn-icon icon-left btn-primary mr-2">
                                 <i class="fas fa-shopping-bag"></i> Belanja Produk
                             </a>
-                            <a href="{{ route('home') }}" class="btn btn-icon icon-left btn-secondary">
+                            <a href="{{ route('profile.show') }}" class="btn btn-icon icon-left btn-secondary">
                                 <i class="fas fa-arrow-left"></i> Kembali
                             </a>
                         </div>

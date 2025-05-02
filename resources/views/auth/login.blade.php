@@ -33,7 +33,7 @@
                             <form method="POST" action="{{ route('login') }}">
                                 @csrf
 
-                                <div class="mb-4">
+                                {{-- <div class="mb-4">
                                     <label for="email" class="form-label text-muted">{{ __('Email Address') }}</label>
                                     <input id="email" type="email"
                                         class="form-control form-control-lg @error('email') is-invalid @enderror"
@@ -81,7 +81,7 @@
                                     <button type="submit" class="btn btn-lg w-100" style="border-radius: 10px; background: linear-gradient(to right, #e9c46a, #f4a261); color: #2a3541; border: none; font-weight: 600; height: 48px;">
                                         {{ __('Login') }}
                                     </button>
-                                </div>
+                                </div> --}}
 
                                 <div class="mb-3">
                                     <a href="{{ route('auth.google') }}" class="btn btn-lg w-100" style="border-radius: 10px; background: #DB4437; color: white; border: none; font-weight: 600; height: 48px; display: flex; align-items: center; justify-content: center;">

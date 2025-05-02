@@ -61,7 +61,6 @@ Route::get('invitation/{token}/google', [App\Http\Controllers\Auth\GoogleInvitat
 Route::get('invitation/google/callback', [App\Http\Controllers\Auth\GoogleInvitationController::class, 'handleGoogleCallback'])->name('auth.google.invitation.callback');
 
 Route::middleware(['auth'])->group(function () {
-    Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
     Route::get('/profile', [ProfileController::class, 'show'])->name('profile.show');
     Route::get('/profile/edit', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::put('/profile/update', [ProfileController::class, 'update'])->name('profile.update');
@@ -156,6 +155,8 @@ Route::middleware(['auth'])->group(function () {
         Route::get('/hakakses/edit/{id}', [App\Http\Controllers\HakaksesController::class, 'edit'])->name('hakakses.edit')->middleware('admin');
         Route::put('/hakakses/update/{id}', [App\Http\Controllers\HakaksesController::class, 'update'])->name('hakakses.update')->middleware('admin');
         Route::delete('/hakakses/delete/{id}', [App\Http\Controllers\HakaksesController::class, 'destroy'])->name('hakakses.delete')->middleware('admin');
+        Route::patch('/hakakses/promote/{id}', [App\Http\Controllers\HakaksesController::class, 'promote'])->name('hakakses.promote')->middleware('admin');
+        Route::patch('/hakakses/unpromote/{id}', [App\Http\Controllers\HakaksesController::class, 'unpromote'])->name('hakakses.unpromote')->middleware('admin');
 
         Route::post('/hakakses/{id}/send-otp', [App\Http\Controllers\HakaksesController::class, 'sendOtp'])->name('hakakses.send-otp')->middleware('admin');
         Route::post('/hakakses/{id}/verify-otp', [App\Http\Controllers\HakaksesController::class, 'verifyOtp'])->name('hakakses.verify-otp')->middleware('admin');
@@ -212,18 +213,18 @@ Route::prefix('api/shipping')->group(function() {
 });
 
 // Shipping test routes
-Route::get('/checkout/modal-test', function () {
-    return view('checkout.modal-test');
-})->name('checkout.modal-test');
+// Route::get('/checkout/modal-test', function () {
+//     return view('checkout.modal-test');
+// })->name('checkout.modal-test');
 
-Route::get('/checkout/location-test', function () {
-    return view('checkout.location-test');
-})->name('checkout.location-test');
+// Route::get('/checkout/location-test', function () {
+//     return view('checkout.location-test');
+// })->name('checkout.location-test');
 
-Route::get('/checkout/test-selector', function () {
-    return view('checkout.test-selector-standalone');
-})->name('checkout.test-selector');
+// Route::get('/checkout/test-selector', function () {
+//     return view('checkout.test-selector-standalone');
+// })->name('checkout.test-selector');
 
-Route::get('/checkout/direct-selector', function () {
-    return view('checkout.direct-selector');
-})->name('checkout.direct-selector');
+// Route::get('/checkout/direct-selector', function () {
+//     return view('checkout.direct-selector');
+// })->name('checkout.direct-selector');

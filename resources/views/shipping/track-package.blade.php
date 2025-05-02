@@ -11,7 +11,7 @@
     <div class="section-header">
         <h1><i class="fas fa-search-location"></i> Lacak Kiriman</h1>
         <div class="section-header-breadcrumb">
-            <div class="breadcrumb-item"><a href="{{ route('home') }}">Dashboard</a></div>
+            <div class="breadcrumb-item"><a href="{{ route('profile.show') }}">Dashboard</a></div>
             <div class="breadcrumb-item active">Lacak Kiriman</div>
         </div>
     </div>
