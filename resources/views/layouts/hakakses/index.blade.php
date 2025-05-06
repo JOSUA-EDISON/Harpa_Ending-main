@@ -108,14 +108,14 @@
                                                     <i class="fas fa-trash"></i> Delete
                                                 </button>
                                             </form>
-                                            <form action="{{ route('admin.hakakses.unpromote', $item->id) }}" method="POST"
+                                            {{-- <form action="{{ route('admin.hakakses.unpromote', $item->id) }}" method="POST"
                                                 class="d-inline" onsubmit="confirmUnpromote(event)">
                                                 @csrf
                                                 @method('PATCH')
                                                 <button type="submit" class="btn btn-warning btn-sm">
                                                     <i class="fas fa-user"></i> Jadikan User
                                                 </button>
-                                            </form>
+                                            </form> --}}
                                         </td>
                                     </tr>
                                     @endif

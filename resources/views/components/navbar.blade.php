@@ -31,10 +31,10 @@
                     <span>Keranjang</span>
                 </a>
                 @else
-                <a href="{{ route('login') }}" class="shop-link catalog">
+                {{-- <a href="{{ route('login') }}" class="shop-link catalog">
                     <i class='bx bx-log-in'></i>
                     <span>Login untuk Belanja</span>
-                </a>
+                </a> --}}
                 @endauth
             </div>
 
@@ -43,10 +43,10 @@
                     <i class='bx bx-log-in'></i>
                     <span>Login</span>
                 </a>
-                <a href="{{ route('register') }}" class="auth-link register">
+                {{-- <a href="{{ route('register') }}" class="auth-link register">
                     <i class='bx bx-user-plus'></i>
                     <span>Register</span>
-                </a>
+                </a> --}}
             @else
                 @if(auth()->user()->role === 'admin')
                 <a href="{{ route('admin.dashboard') }}" class="auth-link login">
